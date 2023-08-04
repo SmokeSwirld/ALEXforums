@@ -1,0 +1,29 @@
+@use 'global/vars/colors';
+@use 'global/vars/backgrounds';
+
+@use 'global/elements/buttons';
+
+@use 'sections/header';
+@use 'sections/forumtopic';
+@use 'sections/forum';
+@use 'sections/registration';
+@use 'sections/forumpost';
+@use 'sections/login';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: colors.$c-body-background;
+  background-image: backgrounds.$b-image-crosses;
+  color: colors.$c-card-text;
+}
+
+.body-padding {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}

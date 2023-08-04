@@ -1,0 +1,34 @@
+@use "../vars/colors";
+@use "../vars/breakpoints";
+@use "../vars/padding";
+@use "../vars/shadows";
+@use "../vars/borders";
+
+@mixin card-in-container {
+  background-color: colors.$c-card-attachment-background;
+  border: borders.$b-card;
+  border-radius: borders.$b-card-radius;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    padding: padding.$p-card-d;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    padding: padding.$p-card-t;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    padding: padding.$p-card-m;
+  }
+}
+
+@mixin card-normal {
+  @include card-in-container();
+  background-color: colors.$c-card-background;
+  box-shadow: shadows.$s-card;
+}
+
+@mixin card-error {
+  @include card-in-container();
+  background-color: colors.$c-card-error-background;
+  border: borders.$b-card-error;
+  box-shadow: shadows.$s-card;
+}

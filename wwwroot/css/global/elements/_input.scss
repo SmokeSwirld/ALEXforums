@@ -1,0 +1,46 @@
+@use "../vars/colors";
+@use "../vars/breakpoints";
+@use "../vars/padding";
+@use "../vars/shadows";
+@use "../vars/borders";
+
+@use "../elements/buttons";
+
+label {
+  font-size: 1.2rem;
+}
+
+input {
+  color: colors.$c-card-text;
+  background-color: colors.$c-btn-background;
+  border: borders.$b-card;
+  border-radius: borders.$b-btn-radius;
+  transition: 0.15s ease-in-out;
+  font-size: 1.2rem;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    padding: padding.$p-input-d;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    padding: padding.$p-input-t;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    padding: padding.$p-input-m;
+  }
+}
+
+input[type=file] {
+  @include buttons.btn-in-container;
+}
+input[type=file]::file-selector-button {
+  display: none;
+} 
+
+input[type=submit] {
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$c-card-background-hover;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using System.Security.Claims;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ALEXforums</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ALEXforums.styles.css" asp-append-version="true" />
+</head>
+
+<!--
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @* @RenderBody() *@
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - ALEXforums - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+-->
+
+<body>
+    <header>
+        <a class="header-logo" asp-area="" asp-controller="Home" asp-action="Main">ALEXforums</a>
+        <div class="header-auth">
+
+
+            
+            @if (Context.User.Identity?.IsAuthenticated == true)
+            {
+                String? avatar =
+                Context.User.Claims
+                .FirstOrDefault(c => c.Type == ClaimTypes.UserData)
+                ?.Value;
+
+                <img src="/uploads/@avatar" alt="Ava" class="rounded-circle" style="max-width: 50px; margin-right: 10px; " />
+
+                <!-- Sign Out button -->
+                <div class="header-btn-logout"><i class="fa-solid fa-user-minus"></i></div>
+            }
+            else
+            {
+                <!-- Button trigger modal -->
+                <a class="header-btn-login" asp-area="" asp-controller="User" asp-action="SignIn"><i class="fa-solid fa-user"></i></a>
+
+                <a class="header-btn-register" asp-area="" asp-controller="User" asp-action="SignUp"><i class="fa-solid fa-user-plus"></i></a>
+            }
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/60d802ca11.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

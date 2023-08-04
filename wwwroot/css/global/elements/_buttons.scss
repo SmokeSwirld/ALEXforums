@@ -1,0 +1,38 @@
+@use "../vars/colors";
+@use "../vars/breakpoints";
+@use "../vars/padding";
+@use "../vars/shadows";
+@use "../vars/borders";
+
+@mixin btn-in-container {
+  background-color: colors.$c-btn-background;
+  border: borders.$b-card;
+  border-radius: borders.$b-btn-radius;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    padding: padding.$p-btn-d;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    padding: padding.$p-btn-t;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    padding: padding.$p-btn-m;
+  }
+
+  &:hover {
+    background-color: colors.$c-card-background-hover;
+  }
+}
+
+@mixin btn-normal {
+  @include btn-in-container();
+  box-shadow: shadows.$s-card;
+}
+
+.btn-is-active {
+  background-color: colors.$c-card-background-hover !important;
+  font-weight: 600;
+}

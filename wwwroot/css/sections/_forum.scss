@@ -1,0 +1,213 @@
+@use "../global/vars/colors";
+@use "../global/vars/breakpoints";
+@use "../global/vars/padding";
+@use "../global/vars/shadows";
+@use "../global/vars/borders";
+@use "../global/vars/backgrounds";
+
+@use "../global/elements/buttons";
+@use "../global/elements/cards";
+
+
+.element-feed {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 1rem;
+  max-width: 1000px;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    flex-direction: row;
+    width: 80%;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    flex-direction: column;
+    width: 90%;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+.forum-btn-create-post {
+  @include buttons.btn-normal;
+  width: 100%;
+  font-size: 1.7rem;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    margin-bottom: 15px;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    margin-bottom: 30px;
+  }
+}
+
+.forum-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.forum-post {
+  @include cards.card-normal;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  width: 100%;
+}
+
+
+.forum-post-container-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: colors.$c-card-text-dark;
+  margin-bottom: 10px;
+}
+
+.forum-post-container-body {
+  a {
+    color: colors.$c-card-text;
+    text-decoration: none;
+  }
+
+  .forum-post-name {
+    font-weight: 600;
+  }
+
+  .forum-post-text {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .forum-post-picture {
+    display: flex;
+    border: borders.$b-card;
+    border-radius: borders.$b-card-radius;
+    overflow: hidden;
+    background-color: colors.$c-card-attachment-background;
+    justify-content: center;
+    margin-top: 10px;
+
+    img {
+      max-height: 500px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    .forum-post-name {
+      font-size: 2.5rem;
+    }
+
+    .forum-post-text {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    .forum-post-name {
+      font-size: 2.5rem;
+    }
+
+    .forum-post-text {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    .forum-post-name {
+      font-size: 1.7rem;
+    }
+    
+    .forum-post-text {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.forum-post-container-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  height: 65px;
+
+  i, a {
+    margin-right: 5px;
+    color: colors.$c-card-text;
+    text-decoration: none;
+  }
+
+  .forum-post-user {
+    @include cards.card-in-container;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (min-width: breakpoints.$br-m){
+      padding: 5px;
+    }
+    @media screen and (max-width: breakpoints.$br-m) {
+      padding: 2px;
+      padding-left: 4px;
+    }
+
+    .forum-post-useravatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (max-width: breakpoints.$br-m) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  
+    .forum-post-username {
+      padding: 10px;
+
+      @media screen and (min-width: breakpoints.$br-d) {
+        font-size: 1.1rem;
+      }
+      @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+        font-size: 1rem;
+      }
+      @media screen and (max-width: breakpoints.$br-m) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .forum-post-commentcount {
+    @include buttons.btn-in-container;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    i {
+      margin-right: 5px;
+    }
+
+    @media screen and (min-width: breakpoints.$br-d) {
+      font-size: 1.2rem;
+    }
+    @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+      font-size: 1.1rem;
+    }
+    @media screen and (max-width: breakpoints.$br-m) {
+      font-size: 1.1rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+}
+<form asp-action="SignIn" enctype="multipart/form-data" method="post" id="signinModal">
+    <div class="element-login body-padding" id="signinModal">
+    <h1>Реєстрація</h1>
+    <section class="section-login-error">
+        <ul>
+            <li>- Username or password is incorrect.</li>
+        </ul>
+    </section>
+    <section class="section-input">
+        <label for="username"><i class="fa-solid fa-user"></i> Ім'я користувача</label>
+        <input type="text" id="signin-login" name="signin-login">
+        <label for="password"><i class="fa-solid fa-lock"></i> Пароль</label>
+        <input type="password" id="signin-password" name="signin-password">
+        <input type="submit" value="Увійти" id="signin-button">
+    </section>
+</div>
+</form>

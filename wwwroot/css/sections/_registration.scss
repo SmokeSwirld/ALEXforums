@@ -1,0 +1,74 @@
+@use "../global/vars/colors";
+@use "../global/vars/breakpoints";
+@use "../global/vars/padding";
+@use "../global/vars/shadows";
+@use "../global/vars/borders";
+
+@use "../global/elements/buttons";
+@use "../global/elements/cards";
+@use "../global/elements/input";
+
+.element-registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  gap: 1rem;
+  max-width: 600px;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    width: 80%;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    width: 90%;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    width: 95%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+
+    @media screen and (max-width: breakpoints.$br-m) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.section-registration-error {
+  @include cards.card-error;
+  width: 100%;
+  font-size: 1.2rem;
+
+  @media screen and (max-width: breakpoints.$br-m) {
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+.section-input {
+  @include cards.card-normal;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+
+  label {
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  label:first-child {
+    margin-top: 0rem;
+  }
+
+  input {
+    margin-top: 0.2rem;
+  }
+
+  input[type=submit] {
+    margin-top: 3rem;
+  }
+}

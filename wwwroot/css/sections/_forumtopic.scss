@@ -1,0 +1,38 @@
+@use "../global/vars/colors";
+@use "../global/vars/breakpoints";
+@use "../global/vars/padding";
+@use "../global/vars/shadows";
+@use "../global/vars/borders";
+@use "../global/vars/backgrounds";
+
+@use "../global/elements/buttons";
+@use "../global/elements/cards";
+
+.topic-container {
+  @include cards.card-normal;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: padding.$p-topiccontainer !important;
+  gap: 10px;
+  min-width: 240px;
+  height: 0%;   // I have no idea how this fixed my problem :>
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    position: relative;
+    left: -1rem;
+    flex-direction: column;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    position: static;
+    flex-direction: row;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    position: static;
+    flex-direction: column;
+  }
+}
+
+.topic-button {
+  @include buttons.btn-in-container;
+}

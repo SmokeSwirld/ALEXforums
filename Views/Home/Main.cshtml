@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "ALEXforums";
+}
+
+<div class="element-feed body-padding">
+    <section class="topic-container">
+        <div class="topic-button topic-programming btn-is-active" role="button"><i class="fa-regular fa-newspaper"></i> Новини та оновлення</div>
+        <div class="topic-button topic-webdev" role="button"><i class="fa-solid fa-window-restore"></i> Веб-розробка</div>
+        <div class="topic-button topic-ux/ui" role="button"><i class="fa-solid fa-person"></i> UX/UI-дизайн</div>
+        <div class="topic-button topic-databases/sql" role="button"><i class="fa-solid fa-database"></i> Бази даних та SQL</div>
+    </section>
+    <section class="forum-feed">
+        <div class="forum-btn-create-post" role="button"><i class="fa-solid fa-plus"></i> Новий пост</div>
+        <!-- Picture -->
+        <div class="forum-post">
+            <div class="forum-post-container-header">
+                <div class="forum-post-category"><i class="fa-regular fa-newspaper"></i> Новини та оновлення</div>
+                <div class="forum-post-publishdate">14.07.2023</div>
+            </div>
+            <div class="forum-post-container-body">
+                <a class="forum-post-name" href="#">Funky rat</a>
+                <div class="forum-post-picture"><img src="/test_pics/forum_img_1.jpg" /></div>
+            </div>
+            <div class="forum-post-container-footer">
+                <div class="forum-post-user">
+                    <div class="forum-post-useravatar"><img src="/test_pics/avatar_wauw.png" /></div>
+                    <div class="forum-post-username">wauw</div>
+                </div>
+                <div class="forum-post-commentcount"><i class="fa-regular fa-comments"></i> 12</div>
+            </div>
+        </div>
+        <!-- Picture & Text -->
+        <div class="forum-post">
+            <div class="forum-post-container-header">
+                <div class="forum-post-category"><i class="fa-regular fa-newspaper"></i> Новини та оновлення</div>
+                <div class="forum-post-publishdate">14.07.2023</div>
+            </div>
+            <div class="forum-post-container-body">
+                <a class="forum-post-name" href="#">zomb</a>
+                <div class="forum-post-text">zomb</div>
+                <div class="forum-post-picture"><img src="/test_pics/forum_img_3.jpg" /></div>
+            </div>
+            <div class="forum-post-container-footer">
+                <div class="forum-post-user">
+                    <div class="forum-post-useravatar"><img src="/test_pics/avatar_derpe.png" /></div>
+                    <div class="forum-post-username">derpedcatto</div>
+                </div>
+                <a class="forum-post-commentcount" asp-area="" asp-controller="Home" asp-action="ForumPost"><i class="fa-regular fa-comments"></i> 27</a>
+            </div>
+        </div>
+        <!-- Nothing -->
+        <div class="forum-post">
+            <div class="forum-post-container-header">
+                <div class="forum-post-category"><i class="fa-regular fa-newspaper"></i> Новини та оновлення</div>
+                <div class="forum-post-publishdate">14.07.2023</div>
+            </div>
+            <div class="forum-post-container-body">
+                <a class="forum-post-name" href="#">Lorem ipsum dolor sit amet.</a>
+            </div>
+            <div class="forum-post-container-footer">
+                <div class="forum-post-user">
+                    <div class="forum-post-useravatar"><img src="/test_pics/avatar_derpe.png" /></div>
+                    <div class="forum-post-username">derpedcatto</div>
+                </div>
+                <div class="forum-post-commentcount"><i class="fa-regular fa-comments"></i> 4</div>
+            </div>
+        </div>
+        <!-- Text -->
+        <div class="forum-post">
+            <div class="forum-post-container-header">
+                <div class="forum-post-category"><i class="fa-regular fa-newspaper"></i> Новини та оновлення</div>
+                <div class="forum-post-publishdate">14.07.2023</div>
+            </div>
+            <div class="forum-post-container-body">
+                <a class="forum-post-name" href="#">Lorem, ipsum.</a>
+                <div class="forum-post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto animi ea voluptatibus quidem numquam impedit commodi cumque, earum, fuga voluptatum, dicta in! Quidem, id voluptatibus itaque quas sit molestias, sunt vel quam quasi doloremque quod obcaecati praesentium distinctio alias placeat!</div>
+            </div>
+            <div class="forum-post-container-footer">
+                <div class="forum-post-user">
+                    <div class="forum-post-useravatar"><img src="/test_pics/avatar_wauw.png" /></div>
+                    <div class="forum-post-username">wauw</div>
+                </div>
+                <div class="forum-post-commentcount"><i class="fa-regular fa-comments"></i> 0</div>
+            </div>
+        </div>
+    </section>
+</div>

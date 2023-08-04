@@ -1,0 +1,113 @@
+@use "../global/vars/colors";
+@use "../global/vars/breakpoints";
+@use "../global/vars/padding";
+@use "../global/vars/shadows";
+@use "../global/vars/borders";
+@use "../global/vars/backgrounds";
+
+@use "../global/elements/buttons";
+@use "../global/elements/cards";
+
+@use "../sections/forum";
+
+.element-forumpost {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+    max-width: 1000px;
+  
+    @media screen and (min-width: breakpoints.$br-d) {
+      width: 80%;
+    }
+    @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+      width: 90%;
+    }
+    @media screen and (max-width: breakpoints.$br-m) {
+      width: 95%;
+    }
+}
+
+.forum-post {
+  margin-bottom: 2rem;
+}
+
+.forum-post-comment {
+  @include cards.card-normal;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 3;
+  margin-bottom: 1rem;
+}
+
+.comment-user {
+  @include cards.card-in-container;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media screen and (min-width: breakpoints.$br-m){
+    padding: 5px;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    padding: 2px;
+    padding-left: 4px;
+  }
+}
+
+.comment-useravatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: breakpoints.$br-m) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.comment-username {
+  padding: 10px;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    font-size: 1.1rem;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    font-size: 0.9rem;
+  }
+}
+
+.comment-date {
+  color: colors.$c-card-text-dark;
+  font-size: 1.1rem;
+
+  @media screen and (max-width: breakpoints.$br-m) {
+    font-size: 1rem;
+  }
+}
+
+.comment-text {
+  font-size: 1.1rem;
+
+  @media screen and (max-width: breakpoints.$br-m) {
+    font-size: 0.9rem;
+  }
+}

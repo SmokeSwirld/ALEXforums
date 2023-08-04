@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+@if (ViewData["form"] != null)
+{
+    if (ViewData["form"]?.ToString() == String.Empty)
+    {
+        <div class="alert alert-success" role="alert">Перевірка пройдена</div>
+    }
+    else
+    {
+
+        <div class="alert alert-danger" role="alert">@ViewData["form"]</div>
+    }
+}
+<form asp-action="SignUp" enctype="multipart/form-data" method="post" class="registration-form">
+<div class="element-registration body-padding">
+    <h1>Реєстрація</h1>
+    <section class="section-registration-error">
+        <ul>
+            <li>- Username field is empty.</li>
+            <li>- Username must be 3-12 characters long.</li>
+            <li>- Username must not contain invalid characters.</li>
+            <br>
+            <li>- Password field is empty.</li>
+            <li>- Password must be 6-12 characters long.</li>
+            <li>- Password must not contain invalid characters.</li>
+            <li>- Repeated password is invalid.</li>
+            <br>
+            <li>- Picture must be in .jpg or .png format.</li>
+        </ul>
+    </section>
+        <section class="section-registration-error">
+            <ul>
+                @if (ViewData["form"] != null)
+                {
+                    if (ViewData["form"]?.ToString() == String.Empty)
+                    {
+                        <div class="alert alert-success" role="alert">Реєстрація пройдена</div>
+                    }
+                    else
+                    {
+
+                        <div class="alert alert-danger" role="alert">@ViewData["form"]</div>
+                    }
+                }
+            </ul>
+
+        </section>
+    <section class="section-input">
+        <label for="username"><i class="fa-solid fa-user"></i> Ім'я користувача (3-12)</label>
+        <input type="text" id="user-login" name="user-login">
+        <label for="password"><i class="fa-solid fa-lock"></i> Пароль (6-12)</label>
+        <input type="password" id="user-password" name="user-password">
+        <label for="confirmPassword"><i class="fa-solid fa-lock"></i> Підтвердити пароль</label>
+        <input type="password" id="user-repeat" name="user-repeat">
+        <label for="avatar"><i class="fa-solid fa-image"></i> Аватар (.png, .jpeg) (необов'язково)</label>
+        <input type="file" class="custom-file-upload" id="user-avatar" name="user-avatar" accept="image/png, image/jpeg">
+        <input type="submit" value="Зареєструватись">
+    </section>
+</div>
+</form>

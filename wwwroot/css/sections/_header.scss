@@ -1,0 +1,82 @@
+@use '../global/vars/colors';
+@use '../global/vars/breakpoints';
+@use '../global/vars/padding';
+@use '../global/vars/borders';
+
+header {
+  display: flex;
+  background-color: colors.$c-card-background;
+  border-bottom: 1px solid colors.$c-card-border;
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: padding.$p-header-d;
+  }
+  @media screen and (min-width: breakpoints.$br-m) and (max-width: breakpoints.$br-d) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: padding.$p-header-t;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: padding.$p-header-m;
+  }
+}
+
+.header-logo {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-left: 10px;
+  color: colors.$c-card-text;
+  text-decoration: none;
+}
+
+.header-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  i {
+    color: colors.$c-card-text;
+  }
+
+  .header-btn-profile {
+    width: 50px;
+    height: 50px;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: breakpoints.$br-m) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media screen and (min-width: breakpoints.$br-d) {
+    font-size: 2.3rem;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: breakpoints.$br-d) and (min-width: breakpoints.$br-m) {
+    font-size: 2.3rem;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: breakpoints.$br-m) {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  
+  > div {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,9 @@
+@use '../vars/colors';
+
+$b-card: 2px solid colors.$c-card-border;
+$b-card-radius: 20px;
+$b-card-thickness: 2px;
+
+$b-btn-radius: 15px;
+
+$b-card-error: 2px solid colors.$c-card-error-border;
